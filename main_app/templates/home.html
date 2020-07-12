@@ -16,7 +16,6 @@
    {% if widget_list|length == 0 %}
    <h3>No Widgets Exist</h3>
    {% else %}
-   {% for widget in Widgets_list.all %}
    <table class='pure-table pure-table-striped'>
      <thead>
        <tr>
@@ -25,17 +24,24 @@
          <th>Delete</th>
        </tr>
      </thead>
+     {% for widget in widget_list.all %}
      <tr>
        <td>{{widget.description}}</td>
-       <td>{{widget.Quantity}}</td>
+       <td>{{widget.quantity}}</td>
        <td><a>X</a></td>
      </tr>
+     {% endfor %}
    </table>
 
-   {% endfor %}
+  
    {% endif %}
    <hr>
-
+   <h4>Add Widget</h4>
+   <form action="{% url 'add_widget' %}" method="post">
+    {% csrf_token %}
+    {{ widget_form.as_p }}
+    <input type="submit" class="btn" value="Add Widget">
+  </form>
  </body>
 
  </html>
