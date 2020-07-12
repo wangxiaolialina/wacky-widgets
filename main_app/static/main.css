@@ -11,3 +11,13 @@ table a {
   color: red;
   text-decoration: none;
 }
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+.total {
+  font-weight: bold;
+}
