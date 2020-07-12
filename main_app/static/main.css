@@ -2,3 +2,12 @@ body {
   text-align: center;
   margin: 2rem;
 }
+
+table {
+  margin: 2rem auto;
+}
+
+table a {
+  color: red;
+  text-decoration: none;
+}
